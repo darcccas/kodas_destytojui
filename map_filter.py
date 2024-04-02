@@ -2,9 +2,8 @@ import random
 
 import math
 
-"""
-DRY - Don't repeat yourself :D
-"""
+
+# DRY - Don't repeat yourself :D
 
 
 def print_word(word):
@@ -70,27 +69,47 @@ Lentynoje sudeti batai:
 a) Paskaičiuokite kiek eurų liks žmogui, jei jis šiuo metu pirks dvejus pigiausius batus;
 '''
 
+
 def count_money_left(prices, pcs_to_buy_cheapest, money_have):
     return round(money_have - sum(sorted(prices)[:pcs_to_buy_cheapest]), 2)
+
 
 price_list = [8.90, 4.90, 13.20, 8.80, 14.00, 12.00]
 money = 20
 psc_to_buy = 2
 
-
 print(count_money_left(price_list, psc_to_buy, money))
 
-#b) kokius dvejus batus jam nupirkti, jei jis turi 20 eurų ir nori, kad jam liktų kuo mažiau eurų;
 
-def max_can_buy(prices, have_money):
-    pass
+# b) kokius dvejus batus jam nupirkti, jei jis turi 20 eurų ir nori, kad jam liktų kuo mažiau eurų;
 
-# planas savaitgaliui pabaigti, kai galva atsinaujins
+def finde_best_2_can_buy(price_list, bankroll):
+    leftof_dict = {}
+    sorted_prices = sorted(price_list)
+    if sum(sorted_prices[:2]) > bankroll:
+        if min(price_list) <= bankroll:
+            return min(price_list), 0
+        else:
+            return 0, 0
+    else:
+        for x in price_list:
+            for y in price_list:
+                if x != y and bankroll - (x + y) >= 0:
+                    leftof_dict[bankroll - (x + y)] = (x, y)
+
+        return leftof_dict[min(leftof_dict.keys())]
 
 
+rand_list = [round(random.uniform(1, 20), 2) for _ in range(10)]
 
+print(rand_list)
+money_have = 20
+price1, price2 = finde_best_2_can_buy(rand_list, money_have)
+if price1 and price2:
+    print(f"geriausiai išnaudoti turimus pinigus galite pirkdami už {price1}$ ir {price2}$ iš turimų {money_have}$ ")
+elif price1:
+    print(f"Jūsų turimų {money_have}$ pakako tik pigiausiai prekei {price1}$ įsigyti")
+else:
+    print(f"Turimu {money_have}$ nepakako")
 
-
-
-shoes_prices = [8.90, 4,90, 13,20, 8,80, 14,00, 12,00]
-
+shoes_prices = [8.90, 4.90, 13, 20, 8.80, 14.00, 12.00]
