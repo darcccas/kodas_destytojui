@@ -39,8 +39,8 @@ print(number_math(num1=number1, num2=number2))
 
 # Sukurkite funkciją, kuri grąžintų tik unikalius simbolius turinčias string reikšmes.
 
-def unic_string(text: str) -> str:
-    pass
+def unic_string(text: str) -> list:
+    return [word for word in text.split() if len(set(word)) == len(word)]
 
 
 '''
@@ -55,3 +55,44 @@ def extract_email_addresses(text: str) -> list:
 long_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at elit nec nisi lobortis luctus. Ut faucibus, lorem@example.com quis hendrerit lacinia, ipsum odio tristique purus, at suscipit quam felis eu purus. Quisque ac lorem vel ante scelerisque suscipit. Nam eu mauris at leo tristique fermentum. Sed varius libero at eros malesuada, sed venenatis justo mattis. Vestibulum@example.net eu dolor non leo lacinia tincidunt. Fusce tristique lacus nec mauris fermentum, at placerat sapien feugiat. Phasellus@example.org finibus vulputate tellus, nec consectetur risus. Curabitur et ligula et ligula pulvinar varius eget eu arcu. Integer at ligula vitae libero facilisis fermentum. Sed@example.co.uk dapibus malesuada orci, id eleifend purus aliquam eu. Donec condimentum, libero eget interdum consequat, odio justo convallis sem, ut ultricies velit velit@example.io eget lacus. In hac habitasse platea dictumst. Maecenas ac libero in velit consequat interdum. Sed eget nisl vel ipsum hendrerit interdum. Fusce id fermentum lacus, ut pulvinar felis. Sed efficitur aliquam nulla, eget convallis neque@example.biz."
 
 print(extract_email_addresses(long_text))
+
+print(unic_string(long_text))
+
+
+#antros dalies uzdaviniai: ar sarasu elementu suma sudaro vienodus elementus
+
+def sum_list_values(a=list, b=list) ->bool:
+    print(list(zip(a, b)))
+    if len(a) == len(b):
+        res_list = [sum(ab) for ab in zip(a, b)]
+        return len(set(res_list)) == 1
+    return False
+
+
+print(sum_list_values(a=[1, 8, 5, 0, -1, 7], b=[0, -7, -4, 1, 2, -6]))
+
+#lyginiu nelyginiu skaiciu sumu skirtumas
+
+def war_of_numbers(a=list) ->int:
+    return abs(sum([num for num in a if num % 2 == 0]) - sum([num for num in a if num % 2 != 0]))
+
+print(war_of_numbers([2, 47, 8, 7 ,9]))
+
+'''
+Jums duotas bigramų masyvas ir žodžių masyvas. Parašykite funkciją, kuri grąžintų True, jei iš šio masyvo galima rasti kiekvieną bigramą bent vieną kartą žodžių masyve.
+'''
+
+def can_find(bigrams=list, words=list) ->bool:
+    for bigram in bigrams:
+        if bigram not in " ".join(words):
+            return False
+    return True
+
+#
+print(can_find(["at", "be", "th", "au"], ["beautiful", "the", "hat"]) )
+print(can_find(["ay", "be", "ta", "cu"], ["maybe", "beta", "abet", "course"]))
+print(can_find(["th", "fo", "ma", "or"], ["the", "many", "for", "forest"]))
+print(can_find(["oo", "mi", "ki", "la"], ["milk", "chocolate", "cooks", "cooks"]))
+# # "cu" nėra nė viename iš žodžių.
+# can_find(["th", "fo", "ma", "or"], ["the", "many", "for", "forest"]) ➞ True
+#can_find(["oo", "mi", "ki", "la"], ["milk", "chocolate", "cooks", "cooks"]) ➞ False
