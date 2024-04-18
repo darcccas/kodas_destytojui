@@ -1,5 +1,3 @@
-
-
 pin = "0045"
 
 for number in range(10000):

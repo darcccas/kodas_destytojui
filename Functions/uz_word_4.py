@@ -24,7 +24,7 @@ for data in data_list:
     if type(data) == str:
         res_dict[data] = len(data)
     elif type(data) == int:
-        res_dict[data] = data ** 2
+        res_dict[data] = data**2
     elif type(data) == list:
         res_dict[str(data)] = sum(data)
     elif type(data) == dict:

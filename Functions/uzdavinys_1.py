@@ -1,4 +1,3 @@
-
 #
 # """
 # Sukurkite kintamuosius, kuriuose reprezentuotų vartotojo vardą ir slaptažodį. Pradėkite begalinį ciklą, leidžiantį įvesti vartotojo vardą ir slaptažodį. Jei duomenys teisingi, sustabdykite begalinį ciklą ir išspausdinkite pasisveikinimo pranešimą.
@@ -15,5 +14,3 @@
 #         print(f"Sveiki atvyke {name}")
 #         break
 #
-
-

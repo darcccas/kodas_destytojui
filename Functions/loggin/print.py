@@ -7,11 +7,19 @@ import logging
 # logging.error('This is an error message')
 # logging.critical('This is a critical message')
 
+
 def loging_info():
     for _ in range(9):
         logging.info("belekas")
 
-logging.basicConfig(level=logging.DEBUG,filename='data.log', filemode='a', format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', datefmt='%d/%m/%Y %H:%M:%S')
+
+logging.basicConfig(
+    level=logging.DEBUG,
+    filename="data.log",
+    filemode="a",
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    datefmt="%d/%m/%Y %H:%M:%S",
+)
 
 
 # Move all the 1s to the end of the array.
@@ -36,10 +44,13 @@ Sukurkite 3 funkcijas, kurios yra susijusios viena su kita (viena iškviečiama 
 
 
 def check_engine() -> None:
-    logging.warning('Engine is not starting')
+    logging.warning("Engine is not starting")
+
 
 def check_temperature() -> None:
-    logging.critical('Temperature is to high')
+    logging.critical("Temperature is to high")
+
+
 def start_car() -> None:
     check_engine()
     check_temperature()
@@ -48,6 +59,7 @@ def start_car() -> None:
 """
 Sukurkite apskaitos programą , kuri paimtų metines pajamas, išlaidas, PVM tarifą (visos reikšmės turi būti kintamos) ir apskaičiuotų pelną, sumokėtus mokesčius 4 skirtingomis valiutomis (USD, EU, JPY, CNY). Visi skaičiavimai ir rezultatai turėtų būti spausdinami ekrane. Visi duomenys ir galimos klaidos turi būti registruojami į failą.
 """
+
 
 def ernings(got=int, pvm=int, lost=int):
     pass

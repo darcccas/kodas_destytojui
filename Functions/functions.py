@@ -1,7 +1,6 @@
 import Constants.constant
 from Constants.constant import *
 
-
 # def find_two_best(price_list: list, amount):
 #     actual_shoes = [price for price in price_list if price < amount]
 #     print(actual_shoes)
@@ -101,6 +100,7 @@ from Constants.constant import *
 # # can_find(["th", "fo", "ma", "or"], ["the", "many", "for", "forest"]) ➞ True
 # #can_find(["oo", "mi", "ki", "la"], ["milk", "chocolate", "cooks", "cooks"]) ➞ False
 
+
 def spausdinti_destytoja(name=Constants.constant.DESTYTOJAS):
     print(f"Destytojas {name}")
 
@@ -136,10 +136,8 @@ for i in range(1, 11):
 
 
 def print_stars(stars=int):
-    for i in range(stars, 0,  -1):
+    for i in range(stars, 0, -1):
         print(i * "*")
 
 
-
 print(print_stars(5))
-

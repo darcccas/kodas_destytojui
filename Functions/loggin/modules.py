@@ -1,17 +1,9 @@
 def curency_EU_USD(eur=int) -> int:
-    return round(eur*1.09, 2)
+    return round(eur * 1.09, 2)
+
 
 def curency_EU_JPY(eur=int) -> int:
-    return round(eur*164.62, 2)
-
-
-
-
-
-
-
-
-
+    return round(eur * 164.62, 2)
 
 
 if __name__ == "__main__":
