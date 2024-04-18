@@ -1,9 +1,11 @@
-
 class Color:
     def __init__(self):
         self.color = "brindal"
+
+
 class Animal:
-    legs = 4 #priejimas self.legs jei naudojame kazkurioje funcijoje, bet ne konstrukturiuje
+    legs = 4  # priejimas self.legs jei naudojame kazkurioje funcijoje, bet ne konstrukturiuje
+
     def __init__(self, age: int = 10, name: str = "feja", *args, **kwargs):
         self.name = name
         self.age = age
@@ -13,10 +15,10 @@ class Animal:
     def run(self, speed: str = "Greitai"):
         return f"{speed} bega {self.name}, jos spalva {self.color.color}, jai yra {self.age} metu"
 
-    def barks(self, volume: str = "tyliai" ):
+    def barks(self, volume: str = "tyliai"):
         return f"{self.name} kartais labai {volume} loja"
 
-    def runs_barks(self, speed: str = "Greitai", volume: str = "tyliai" ):
+    def runs_barks(self, speed: str = "Greitai", volume: str = "tyliai"):
         return self.run(speed=speed), self.barks(volume=volume)
 
 

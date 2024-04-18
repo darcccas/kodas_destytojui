@@ -4,9 +4,7 @@ Duotas listas skaiciu – [1, 2, 3, 4, 5, 6, 18, 90, 118, 991,  196151]. Grazint
 
 num_list = [1, 2, 3, 4, 5, 6, 18, 90, 118, 991, 196151]
 
-res_dict = {
-
-}
+res_dict = {}
 num_even = []
 num_odd = []
 for num in num_list:

@@ -1,4 +1,3 @@
-
 # numbers = input("iveskite skaiciu serija, kuriai norite apskaiciuoti vidurki: ")
 #
 # num_list = numbers.split()
@@ -7,4 +6,3 @@
 #     result += int(number)
 #
 # print(num_list, f"ivestu skaiciu vidurkis yra {result/len(num_list)}")
-

@@ -48,6 +48,7 @@ print(labor.fullname)
 
 # Sukurkite knygos klasę Book, kuri turi du atributus:
 
+
 class Book:
     def __init__(self, name: str, author: str):
         self.name = name
@@ -72,6 +73,7 @@ print(HP.get_author())
 
 
 # uzdavinys
+
 
 class Country:
     def __init__(self, name: str, population: int, area: int):
